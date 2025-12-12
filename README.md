@@ -5,13 +5,13 @@ Object tracking using YOLOv8 with ByteTrack and BoT-SORT.
 ## Install
 
 ```bash
-pip install ultralytics
+uv sync
 ```
 
 ## Run
 
 ```bash
-python main.py
+uv run main.py
 ```
 
 ## Experiments
@@ -19,5 +19,5 @@ python main.py
 Test different tracking configurations:
 
 ```bash
-python experiments.py
+uv run experiments.py
 ```
