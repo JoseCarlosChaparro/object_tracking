@@ -8,3 +8,21 @@ wheels/
 
 # Virtual environments
 .venv
+# Videos
+*.mp4
+*.webm
+*.avi
+*.mov
+
+# Datasets y archivos grandes
+*.weights
+*.pt
+yolov8*.pt
+
+# Resultados de experimentos
+experiments/
+runs/
+
+# OS
+.DS_Store
+Thumbs.db
