@@ -1,6 +1,6 @@
-# Object Tracking
+# Camera Calibration
 
-Object tracking using YOLOv8 with ByteTrack and BoT-SORT.
+Fisheye camera calibration system for correcting distortion in computer vision applications.
 
 ## Install
 
@@ -8,16 +8,34 @@ Object tracking using YOLOv8 with ByteTrack and BoT-SORT.
 uv sync
 ```
 
-## Run
+## Workflow
+
+### 1. Distortion Test (Optional)
+
+Visually analyze your camera's distortion:
 
 ```bash
-uv run main.py
+uv run calibration.py
 ```
 
-## Experiments
+Generates images with grids and circles to evaluate distortion severity.
 
-Test different tracking configurations:
+### 2. Fisheye Calibration
+
+Calibrate your camera using a chessboard pattern (9x6):
 
 ```bash
-uv run experiments.py
+uv run calibrate_fisheye.py
 ```
+
+The interactive process captures 20 images from different angles and calculates calibration parameters. Generates `fisheye_calibration.npz` with camera matrix and distortion coefficients.
+
+### 3. Tracking Usage
+
+Apply calibration in a tracking system:
+
+```bash
+uv run test.py
+```
+
+Example integration with YOLOv8 that corrects distortion in real-time before tracking.
